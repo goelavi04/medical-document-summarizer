@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# Model artifacts (too large for git; document how to fetch/load instead)
+backend/models/adapter/
+training/*.zip
+training/eval_results.json
+training/phi3-mini-pubmed-qlora-adapter*/
+
+# Env
+.env
+*.env.local
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.vercel/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
