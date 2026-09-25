@@ -78,15 +78,15 @@ def build_graph():
 
     graph.add_node("router", router_node)
     graph.add_node("summarizer", summarizer_node)
-    graph.add_node("verification", verification_node)
+    graph.add_node("verify", verification_node)
     graph.add_node("bump_regeneration", bump_regeneration_node)
     graph.add_node("explainer", explainer_node)
 
     graph.set_entry_point("router")
     graph.add_edge("router", "summarizer")
-    graph.add_edge("summarizer", "verification")
+    graph.add_edge("summarizer", "verify")
     graph.add_conditional_edges(
-        "verification",
+        "verify",
         route_after_verification,
         {"retry": "bump_regeneration", "proceed": "explainer"},
     )

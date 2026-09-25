@@ -13,7 +13,7 @@ from app.agents.summarizer_agent import get_tokenizer
 
 _DISCHARGE_MARKERS = re.compile(r"\b(discharge (summary|diagnosis|instructions)|hospital course)\b", re.I)
 _CLINICAL_NOTE_MARKERS = re.compile(r"\b(chief complaint|history of present illness|physical exam|assessment and plan|soap note)\b", re.I)
-_ABSTRACT_MARKERS = re.compile(r"\b(background:|methods:|results:|conclusion(s)?:|objective:)\b", re.I)
+_ABSTRACT_MARKERS = re.compile(r"\b(background|methods|results|conclusion(s)?|objective)\s*:", re.I)
 
 
 def classify_doc_type(document: str) -> str:
